@@ -6391,11 +6391,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\serif.aydin\\Desktop\\Api_jwt\\Api_jwt\\Api_jwt.csproj",
+      "projectUniqueName": "C:\\Users\\serif.aydin\\Desktop\\GITHUB\\JWT_Token\\Api_jwt\\Api_jwt\\Api_jwt.csproj",
       "projectName": "Api_jwt",
-      "projectPath": "C:\\Users\\serif.aydin\\Desktop\\Api_jwt\\Api_jwt\\Api_jwt.csproj",
+      "projectPath": "C:\\Users\\serif.aydin\\Desktop\\GITHUB\\JWT_Token\\Api_jwt\\Api_jwt\\Api_jwt.csproj",
       "packagesPath": "C:\\Users\\serif.aydin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\serif.aydin\\Desktop\\Api_jwt\\Api_jwt\\obj\\",
+      "outputPath": "C:\\Users\\serif.aydin\\Desktop\\GITHUB\\JWT_Token\\Api_jwt\\Api_jwt\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
