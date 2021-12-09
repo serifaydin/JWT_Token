@@ -1,4 +1,4 @@
-using Api_jwt.Middleware;
+﻿using Api_jwt.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Text;
 
 namespace Api_jwt
@@ -35,14 +36,18 @@ namespace Api_jwt
             {
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidateIssuer = false,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    RequireExpirationTime = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JWTModel.Key)),
+                    ValidateIssuer = true,
                     ValidIssuer = JWTModel.Issuer,
+                    ValidateAudience = true,
                     ValidAudience = JWTModel.Audience,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JWTModel.Key))
+                    ValidateLifetime = true,
+
+                    //Verilen sürede token sonlanır. eğer Zero olarak verilmez ise default da 5 dakikadır.
+                    //Jetonunuzun süresinin tam zamanında bitmesini istiyorsanız; ClockSkew'i aşağıdaki gibi sıfıra ayarlamanız gerekir,
+                    ClockSkew = TimeSpan.Zero,
+                    RequireExpirationTime = true
                 };
             });
 
